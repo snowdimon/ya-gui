@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#### Author: Snow Dimon ####
+#### Website: snowdimon.ru ####
+
+hf=`cat .config/yandex-disk/config.cfg  | grep dir`
+f=`cat .config/yandex-disk/tmp`
+echo "$hf" запись в tmp
+echo "$hf" > .config/yandex-disk/tmp
+sed -i 's/[[:blank:]]*dir="//'  .config/yandex-disk/tmp
+sed -i 's/[[:blank:]]*"//'  .config/yandex-disk/tmp
+echo $f
+nautilus $f
+

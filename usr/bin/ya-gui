@@ -1,0 +1,51 @@
+#!/bin/bash
+
+#### Author: Snow Dimon ####
+#### Website: snowdimon.ru ####
+ya="yandex-disk"
+dstat=`$ya status | head -n1 | awk '{print($1)}'`
+if [ "$dstat" = "Статус" ]; then
+ans=$(zenity  --list --height 550 --cancel-label="Выход" --title "Yandex disk" --text "`yandex-disk status`
+------------------------------------------------------------------------------------------------------------------------
+Выберите действие:" --radiolist --hide-header --column "" --column "Варианты" FALSE "Расшарить файлы" FALSE "Закрыть доступ к файлам" FALSE "Остановить демон")
+	if [ "$ans" = "Расшарить файлы" ]; then
+	filename=`zenity --multiple --file-selection --title="Выбор файла"`
+	"$ya" publish "$filename" | zenity --text-info --width 400 --height 110 --title="Публичная ссылка:"
+	else
+		if [ "$ans" = "Закрыть доступ к файлам" ]; then
+		filename=`zenity --file-selection --title="Доступ к выбранным файлам будет закрыт:"`
+		"$ya" unpublish "$filename"
+		else
+			if [ "$ans" = "Остановить демон" ]; then
+			"$ya" stop
+			fi
+		fi
+	fi
+else
+ans=$(zenity  --list --cancel-label="Выход" --ok-label="Запустить"  --title "Yandex disk" --text "Демон не запущен. Запустить?" --radiolist --hide-header --column "Выбор" --column "Параметр" TRUE "NORMAL" FALSE "ADVANCED");
+	if [ "$ans" = ADVANCED ]; then
+	$ya $(zenity --entry --title="Параметр запуска" --text="Введите параметр запуска yandex-disk. Например:" \
+          --entry-text="start --read-only")
+	else
+	if [ "$ans" = NORMAL ]; then
+	$ya start
+	sleep 10 | tee >(zenity --progress --pulsate --no-cancel  --auto-close --title "Yandex disk" --text "Чтение данных. Подождите...")
+ans=$(zenity  --list  --title "Yandex disk" --text "`yandex-disk status`
+------------------------------------------------------------------------------------------------------------------------
+Выберите действие:" --radiolist --hide-header --cancel-label="Выход" --column "*" --column "Варианты" FALSE "Расшарить файлы" FALSE "Закрыть доступ к файлам" FALSE "Остановить демон")
+	if [ "$ans" = "Расшарить файлы" ]; then
+	filename=`zenity --multiple --file-selection --title="Выбор файла"`
+	"$ya" publish "$filename" | zenity --text-info --width 350  --title="Yandex disk | Публичная ссылка:"
+	else
+		if [ "$ans" = "Закрыть доступ к файлам" ]; then
+		filename=`zenity --file-selection --title="Выбор файла"`
+		"$ya" unpublish "$filename"
+		else
+			if [ "$ans" = "Остановить демон" ]; then
+			"$ya" stop
+			fi
+		fi
+	fi
+	fi
+	fi
+fi

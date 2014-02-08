@@ -1,0 +1,3 @@
+#!/bin/bash
+yandex-disk start
+notify-send -i /usr/share/ya-gui/ya.png Яндекс.Диск "Демон успешно запущен"

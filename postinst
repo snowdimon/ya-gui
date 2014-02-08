@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cp /usr/share/ya-gui/Расшарить* /home/*/.gnome2/nautilus-scripts
+cp /usr/share/ya-gui/Расшарить* /home/*/.local/share/nautilus/scripts
