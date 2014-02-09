@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#### Author: Snow Dimon ####
+#### Website: snowdimon.ru ####
+f=`yandex-disk status | grep Занято | awk '{print($2)}'`
+a=`yandex-disk status | grep Всего | awk '{print($2)}'`
+echo "$f*100/$a" | bc
