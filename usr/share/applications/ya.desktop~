@@ -8,7 +8,7 @@ Terminal=false
 Type=Application
 Categories=www;network;
 
-Actions=Open;Start;Web;Stop;Widget;
+Actions=Open;Start;Web;Stop;
 
 [Desktop Action Open]
 Name=Open dir
@@ -29,8 +29,3 @@ Exec=firefox http://disk.yandex.ru
 Name=Stop
 Name[ru]=Остановить демон
 Exec=/usr/share/ya-gui/stop
-
-[Desktop Action Widget]
-Name=Widget
-Name[ru]=Показать виджет
-Exec=conky -c /usr/share/ya-gui/conkyrc
