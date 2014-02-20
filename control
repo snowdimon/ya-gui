@@ -5,4 +5,4 @@ Installed-Size: 512
 Maintainer: Developers <snowdimon@gmail.com>
 Original-Maintainer: Snow Dimon | snowdimon.ru
 Depends: yandex-disk, zenity, bash, conky-all
-Description: Gui interface for yandex.disk client.
+Description: Gui interface for yandex-disk client.
