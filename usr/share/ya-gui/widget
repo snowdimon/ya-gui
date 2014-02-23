@@ -1,0 +1,8 @@
+#!/bin/bash
+ps ax | grep conky| grep -v grep
+
+if [ $? != 0 ]; then
+conky -c /usr/share/ya-gui/conkyrc
+else
+killall conky
+fi
