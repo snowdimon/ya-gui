@@ -1,7 +1,0 @@
-#!/bin/bash
-
-if (("`lsb_release -r | sed -n '1{s/[^0-9]//g;p;q}'`" > "1210")); then
-cp /usr/share/ya-gui/SEND-TO-YANDEX /home/*/.local/share/nautilus/scripts/
-else
-cp /usr/share/ya-gui/SEND-TO-YANDEX /home/*/.gnome2/nautilus-scripts/
-fi
