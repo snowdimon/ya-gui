@@ -7,4 +7,4 @@ Original-Maintainer: Snow Dimon | snowdimon.ru
 Depends: yandex-disk, zenity, bash, conky-all
 Homepage:http://www.snowdimon.ru
 Description: Ya-gui
-Gui interface for yandex-disk client
+ Gui interface for yandex-disk client
