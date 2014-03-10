@@ -5,3 +5,4 @@ cp -r /usr/share/ya-gui/SEND-TO-YANDEX $HOME/.local/share/nautilus/scripts/
 else
 cp -r /usr/share/ya-gui/SEND-TO-YANDEX $HOME/.gnome2/nautilus-scripts/
 fi
+exit 0

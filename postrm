@@ -7,3 +7,4 @@ else
 cd $HOME/.gnome2/nautilus-scripts/
 rm -rf SEND-TO-YANDEX
 fi
+exit 0
