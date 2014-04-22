@@ -1,8 +1,8 @@
 #!/bin/bash
-
-if (("`lsb_release -r | sed -n '1{s/[^0-9]//g;p;q}'`" > "1210")); then
-cp -r /usr/share/ya-gui/SEND-TO-YANDEX $HOME/.local/share/nautilus/scripts/
+var= lsb_release -r | sed -n '1{s/[^0-9]//g;p;q}'
+if (($var > 1210)); then
+cp -r /usr/share/ya-gui/Yandex-Actions $HOME/.local/share/nautilus/scripts/
 else
-cp -r /usr/share/ya-gui/SEND-TO-YANDEX $HOME/.gnome2/nautilus-scripts/
+cp -r /usr/share/ya-gui/Yandex-Actions $HOME/.gnome2/nautilus-scripts/
 fi
 exit 0
