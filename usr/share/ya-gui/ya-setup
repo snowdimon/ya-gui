@@ -8,7 +8,7 @@ ans=$(zenity  --list --cancel-label="Выход" --ok-label="Далее" --title
 До начала использования клиента необходимо ответить на несколько вопросов:
 Использовать проки-сервер?" --radiolist --hide-header --column "" --column "Варианты" TRUE "Нет"  FALSE "Да" FALSE "Системные настройки")
 if [ $? -eq "0" ];then
-echo "auth=/home/test/.config/yandex-disk/passwd" > /home/$USER/.config/yandex-disk/config.cfg
+echo "auth=/home/$USER/.config/yandex-disk/passwd" > /home/$USER/.config/yandex-disk/config.cfg
 	if [ "$ans" = "Нет" ]; then
 	echo "proxy=no" >> /home/$USER/.config/yandex-disk/config.cfg
 
