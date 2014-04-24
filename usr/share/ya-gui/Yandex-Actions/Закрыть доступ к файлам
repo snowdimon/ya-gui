@@ -2,6 +2,5 @@
 #### Author: Snow Dimon ####
 #### Website: snowdimon.ru ####
 
-yandex-disk unpublish $* | zenity --text-info --width 350  --title="Yandex.Disk | Публичная ссылка:"
-
-
+zenity --info --window-icon=/opt/yd-tools/icons/yd-128_g.png --ok-label="Закрыть" --title="Yandex.Disk" --text="$*
+ `yandex-disk unpublish "$*"`"
