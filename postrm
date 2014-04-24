@@ -1,0 +1,10 @@
+#!/bin/bash
+var= lsb_release -r | sed -n '1{s/[^0-9]//g;p;q}'
+if (($var > 1210)); then
+cd $HOME/.local/share/nautilus/scripts/
+rm -rf Yandex-Actions
+else
+cd $HOME/.gnome2/nautilus-scripts/
+rm -rf Yandex-Actions
+fi
+exit 0

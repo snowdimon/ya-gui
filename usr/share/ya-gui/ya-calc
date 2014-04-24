@@ -4,4 +4,9 @@
 #### Website: snowdimon.ru ####
 f=`yandex-disk status | grep Занято | awk '{print($2)}'`
 a=`yandex-disk status | grep Всего | awk '{print($2)}'`
+c=`yandex-disk status | grep Занято | awk '{print($3)}'`
+if [ "$c" = "MB" ]; then
+echo "$f*100/(1000*$a)" | bc
+else
 echo "$f*100/$a" | bc
+fi

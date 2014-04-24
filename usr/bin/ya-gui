@@ -4,6 +4,7 @@
 #### Website: snowdimon.ru ####
 ya="yandex-disk"
 dstat=`$ya status | head -n1 | awk '{print($1)}'`
+
 if [ "$dstat" = "Статус" ]; then
 ans=$(zenity  --list --height 550 --cancel-label="Выход" --title "Yandex disk" --text "`yandex-disk status`
 ------------------------------------------------------------------------------------------------------------------------
@@ -29,7 +30,7 @@ ans=$(zenity  --list --cancel-label="Выход" --ok-label="Запустить"
 	else
 	if [ "$ans" = NORMAL ]; then
 	$ya start
-	sleep 10 | tee >(zenity --progress --pulsate --no-cancel  --auto-close --title "Yandex disk" --text "Чтение данных. Подождите...")
+	sleep 10 | zenity --progress --pulsate --no-cancel  --auto-close --title "Yandex disk" --text "Чтение данных. Подождите..."
 ans=$(zenity  --list  --title "Yandex disk" --text "`yandex-disk status`
 ------------------------------------------------------------------------------------------------------------------------
 Выберите действие:" --radiolist --hide-header --cancel-label="Выход" --column "*" --column "Варианты" FALSE "Расшарить файлы" FALSE "Закрыть доступ к файлам" FALSE "Остановить демон")

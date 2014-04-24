@@ -1,8 +1,10 @@
 Package: ya-gui
-Version: 0.5.1
+Version: 0.6.0
 Architecture: all
-Installed-Size: 512
+Installed-Size: 112
 Maintainer: Developers <snowdimon@gmail.com>
 Original-Maintainer: Snow Dimon | snowdimon.ru
 Depends: yandex-disk, zenity, bash, conky-all
-Description: Gui interface for yandex.disk client.
+Homepage:http://www.snowdimon.ru
+Description: Ya-gui
+ Gui interface for yandex-disk client

@@ -1,9 +1,0 @@
-#!/bin/bash
-#### Author: Snow Dimon ####
-#### Website: snowdimon.ru ####
-declare COUNT
-for COUNT in $*
-do
-yandex-disk publish "$COUNT" | zenity --text-info --width 350  --title="Yandex disk | Публичная ссылка:"
-done
-

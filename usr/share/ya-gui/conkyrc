@@ -17,7 +17,7 @@ alignment top_right
 gap_x 10
 gap_y 0
 minimum_size 200 100
-update_interval 10.0
+update_interval 3
 default_bar_size 110 10
 
 
@@ -28,4 +28,6 @@ TEXT
 ${image /usr/share/ya-gui/ya1.png -p 12,16 -s 63x50}
 ${goto 73}${color b2b2b3} ${exec yandex-disk status | grep Всего}
 ${goto 73}${color b2b2b3} ${exec yandex-disk status | grep Занято}
+${goto 35}${color 000000}${exec yandex-disk status | grep "%"| awk '{print($7$8)}'}
 
+${goto 50}${color b2b2b3}${font mono:size=6} ${exec yandex-disk status | grep "%"| awk '{print($1" "$3$4" "$5$6)}'}

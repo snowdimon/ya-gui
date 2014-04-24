@@ -8,7 +8,7 @@ Terminal=false
 Type=Application
 Categories=www;network;
 
-Actions=Open;Start;Web;Stop;Widget;
+Actions=Open;Start;Web;Stop;Widget;Set;
 
 [Desktop Action Open]
 Name=Open dir
@@ -23,7 +23,7 @@ Exec=/usr/share/ya-gui/start
 [Desktop Action Web]
 Name=Open web
 Name[ru]=Открыть веб-версию
-Exec=firefox http://disk.yandex.ru
+Exec=xdg-open http://disk.yandex.ru
 
 [Desktop Action Stop]
 Name=Stop
@@ -32,5 +32,10 @@ Exec=/usr/share/ya-gui/stop
 
 [Desktop Action Widget]
 Name=Widget
-Name[ru]=Показать виджет
-Exec=conky -c /usr/share/ya-gui/conkyrc
+Name[ru]=Вкл/Выкл виджет
+Exec=/usr/share/ya-gui/widget
+
+[Desktop Action Set]
+Name=Settings
+Name[ru]=Настроить
+Exec=/usr/share/ya-gui/ya-setup
